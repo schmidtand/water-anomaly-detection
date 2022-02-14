@@ -41,8 +41,8 @@
         "dhm3c_vm__ec_eis": {"name": "AutocorrelationClassifier", "params": {"slope": 250, "prev": 3, "next": 1}},
         "dhm3c_vm__ec_nod": "clf/dhm3c_vm__ec_nod_rf.pickle",
         "dhm3c_vm__ec_wul": "clf/dhm3c_vm__ec_wul_rf.pickle",
-        "dhm3c_vm__t_ec_eis": "../clf/dhm3c_vm__t_ec_eis_rf.pickle",
-        "dhm3c_vm__t_ec_wul": "../../clf/dhm3c_vm__t_ec_wul_rf.pickle",
+        "dhm3c_vm__t_ec_eis": "clf/dhm3c_vm__t_ec_eis_rf.pickle",
+        "dhm3c_vm__t_ec_wul": "clf/dhm3c_vm__t_ec_wul_rf.pickle",
         "dhm3c_vm__t_ec_nod": "clf/dhm3c_vm__t_ec_nod_rf.pickle"
     }
 }
