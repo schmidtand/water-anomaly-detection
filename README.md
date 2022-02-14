@@ -2,5 +2,5 @@
 
 Run with
 ```
-python3 -m src.ap
+python3 -m src.api
 ```
