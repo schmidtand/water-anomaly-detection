@@ -1,0 +1,48 @@
+{
+    "db": {"host": "10.10.100.1", "database": "tuwien_zentrale"},
+    "related": {
+        "dhm3c_vm__tss_eis": ["dhm3c_vm__h_hydro_eis", "dhm3c_vm__q_hydro_eis", "dhm3c_vm__tss_nod", "dhm3c_vm__tss_wul"],
+        "dhm3c_vm__tss_wul": ["dhm3c_vm__h_hydro_wul", "dhm3c_vm__q_hydro_wul", "dhm3c_vm__tss_nod", "dhm3c_vm__tss_eis"],
+        "dhm3c_vm__tss_nod": ["dhm3c_vm__h_hydro_nod", "dhm3c_vm__q_hydro_nod", "dhm3c_vm__tss_wul", "dhm3c_vm__tss_eis"],
+
+        "dhm3c_vm__ec_eis": ["dhm3c_vm__h_hydro_eis", "dhm3c_vm__q_hydro_eis", "dhm3c_vm__tss_eis", "dhm3c_vm__t_ec_eis", "dhm3c_vm__ec_wul", "dhm3c_vm__ec_nod"],
+        "dhm3c_vm__ec_wul": ["dhm3c_vm__h_hydro_wul", "dhm3c_vm__q_hydro_wul", "dhm3c_vm__tss_wul", "dhm3c_vm__t_ec_wul", "dhm3c_vm__ec_eis", "dhm3c_vm__ec_nod"],
+        "dhm3c_vm__ec_nod": ["dhm3c_vm__h_hydro_nod", "dhm3c_vm__q_hydro_nod", "dhm3c_vm__tss_nod", "dhm3c_vm__t_ec_nod", "dhm3c_vm__ec_wul", "dhm3c_vm__ec_eis"],
+
+        "dhm3c_vm__t_ec_eis": ["dhm3c_vm__h_hydro_eis", "dhm3c_vm__q_hydro_eis", "dhm3c_vm__tss_eis", "dhm3c_vm__ec_eis", "dhm3c_vm__t_ec_wul", "dhm3c_vm__t_ec_nod"],
+        "dhm3c_vm__t_ec_wul": ["dhm3c_vm__h_hydro_wul", "dhm3c_vm__q_hydro_wul", "dhm3c_vm__tss_wul", "dhm3c_vm__ec_wul", "dhm3c_vm__t_ec_eis", "dhm3c_vm__t_ec_nod"],
+        "dhm3c_vm__t_ec_nod": ["dhm3c_vm__h_hydro_nod", "dhm3c_vm__q_hydro_nod", "dhm3c_vm__tss_nod", "dhm3c_vm__ec_nod", "dhm3c_vm__t_ec_wul", "dhm3c_vm__t_ec_eis"]
+    },
+    "names": {
+        "dhm3c_vm__h_hydro_eis": "H Hydro Eis",
+        "dhm3c_vm__h_hydro_wul": "H Hydro Wul",
+        "dhm3c_vm__h_hydro_nod": "H Hydro Nod",
+        "dhm3c_vm__t_ec_eis": "T EC Eis",
+        "dhm3c_vm__t_ec_wul": "T EC Wul",
+        "dhm3c_vm__t_ec_nod": "T EC Nod",
+        "dhm3c_vm__tss_eis": "TSS Eis",
+        "dhm3c_vm__tss_nod": "TSS Nod",
+        "dhm3c_vm__tss_wul": "TSS Wul",
+        "dhm3c_vm__q_hydro_eis": "Q Hydro Eis",
+        "dhm3c_vm__q_hydro_wul": "Q Hydro Wul",
+        "dhm3c_vm__q_hydro_nod": "Q Hydro Nod",
+        "dhm3c_vm__ec_eis": "EC Eis",
+        "dhm3c_vm__ec_wul": "EC Wul",
+        "dhm3c_vm__ec_nod": "EC Nod",
+        "dhm3c_vm__tss_eis_copy_for_testing": "TSS Eis TEST"
+    },
+    "y_scale": {
+        "dhm3c_vm__tss_nod": "log"
+    },
+    "outlier_detector": {
+        "dhm3c_vm__tss_eis": {"name": "AutocorrelationClassifier", "params": {"slope": 100, "prev": 1, "next": 2}},
+        "dhm3c_vm__tss_nod": {"name": "AutocorrelationClassifier", "params": {"slope": 250, "prev": 0, "next": 1}},
+        "dhm3c_vm__tss_wul": {"name": "AutocorrelationClassifier", "params": {"slope": 10, "prev": 1, "next": 4}},
+        "dhm3c_vm__ec_eis": {"name": "AutocorrelationClassifier", "params": {"slope": 250, "prev": 3, "next": 1}},
+        "dhm3c_vm__ec_nod": "clf/dhm3c_vm__ec_nod_rf.pickle",
+        "dhm3c_vm__ec_wul": "clf/dhm3c_vm__ec_wul_rf.pickle",
+        "dhm3c_vm__t_ec_eis": "../clf/dhm3c_vm__t_ec_eis_rf.pickle",
+        "dhm3c_vm__t_ec_wul": "../../clf/dhm3c_vm__t_ec_wul_rf.pickle",
+        "dhm3c_vm__t_ec_nod": "clf/dhm3c_vm__t_ec_nod_rf.pickle"
+    }
+}
